@@ -1,11 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIT</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Stylish Website</title>
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #685eec 0%, #4f82da 100%);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+
+    /* Header */
+    header {
+      background: #3b40a4;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      user-select: none;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #f7f7f7;
+      border-bottom: 1px solid #ddd;
+    }
+    nav a {
+      color: #555;
+      text-decoration: none;
+      padding: 15px 25px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border-bottom: 3px solid transparent;
+    }
+    nav a:hover,
+    nav a.active {
+      background-color: #3b40a4;
+      color: white;
+      border-bottom: 3px solid #ffcc00;
+    }
+
+    /* Main content */
+    main {
+      padding: 40px 30px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #3b40a4;
+      border-left: 5px solid #ffcc00;
+      padding-left: 10px;
+    }
+
+    /* About Me */
+    #about p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    /* Projects */
+    #projects ul {
+      list-style: none;
+      max-width: 700px;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    #projects ul li {
+      background: #f0f0f0;
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #333;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    #projects ul li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    /* Contact */
+    #contact button {
+      background-color: #3b40a4;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(59, 64, 164, 0.6);
+    }
+    #contact button:hover {
+      background-color: #2a2e77;
+    }
+    #email {
+      margin-top: 20px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #3b40a4;
+      user-select: text;
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px 0;
+      background-color: #3b40a4;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      user-select: none;
+      letter-spacing: 1px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        font-size: 2rem;
+        padding: 30px 15px;
+      }
+      nav a {
+        padding: 12px 15px;
+        font-size: 1rem;
+      }
+      main {
+        padding: 25px 20px;
+      }
+      section h2 {
+        font-size: 1.6rem;
+      }
+      #contact button {
+        width: 100%;
+        padding: 15px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    
+
+  <div class="container">
+    <header>
+      My Stylish Website
+    </header>
+
+    <nav>
+      <a href="#about" class="active">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+        <p>Hi! I'm a passionate web developer who enjoys crafting clean and functional websites. With experience in HTML, CSS, JavaScript, and modern frameworks, I strive to build engaging digital experiences.</p>
+        <p>When not coding, I love reading tech blogs, exploring new design trends, and contributing to open-source projects.</p>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li><strong>Weather App:</strong> A sleek app that fetches weather data from OpenWeather API with real-time updates.</li>
+          <li><strong>Todo List:</strong> A task manager with local storage support and drag-and-drop functionality.</li>
+          <li><strong>Portfolio Website:</strong> This site! A responsive and stylish portfolio to showcase my work.</li>
+          <li><strong>Chat App:</strong> Real-time chat using WebSockets and Node.js backend.</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <button id="contactBtn">Show My Email</button>
+        <p id="email">myemail@example.com</p>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2025 My Stylish Portfolio | Built with ❤️ by Me
+    </footer>
+  </div>
+
+  <script>
+    // Smooth scroll for nav links
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Toggle email visibility
+    const btn = document.getElementById('contactBtn');
+    const email = document.getElementById('email');
+    btn.addEventListener('click', () => {
+      if(email.style.display === 'none' || email.style.display === '') {
+        email.style.display = 'block';
+        btn.textContent = 'Hide My Email';
+      } else {
+        email.style.display = 'none';
+        btn.textContent = 'Show My Email';
+      }
+    });
+  </script>
+
 </body>
 </html>
